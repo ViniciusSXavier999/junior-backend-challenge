@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.challenge.junior.backend.simplify.desafio.todolist.entity.Todo;
 import com.challenge.junior.backend.simplify.desafio.todolist.service.TodoService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
@@ -23,7 +25,7 @@ public class TodoController {
 	private TodoService todoService;
 
 	@PostMapping
-	List<Todo> create(@RequestBody Todo todo) {
+	List<Todo> create(@RequestBody @Valid Todo todo) {
 		return todoService.create(todo);
 	}
 	
@@ -33,7 +35,7 @@ public class TodoController {
 	}
 	
 	@PutMapping
-	List<Todo> update(@RequestBody Todo todo) {
+	List<Todo> update(  @RequestBody Todo todo) {
 		return todoService.update(todo);
 	}
 	

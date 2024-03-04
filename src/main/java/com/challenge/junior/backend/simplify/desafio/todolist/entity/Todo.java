@@ -1,25 +1,37 @@
 package com.challenge.junior.backend.simplify.desafio.todolist.entity;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_todos")
 public class Todo {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotBlank
 	private String nome;
+	@NotBlank
 	private String descricao;
 	private boolean realizado;
 	private int prioridade;
-	
-	public Todo () {
-		
+
+	public Todo() {
+
+	}
+
+	public Todo(String nome, String descricao, boolean realizado, int prioridade) {
+		this.nome = nome;
+		this.descricao = descricao;
+		this.realizado = realizado;
+		this.prioridade = prioridade;
 	}
 
 	public Long getId() {
@@ -62,6 +74,9 @@ public class Todo {
 		this.prioridade = prioridade;
 	}
 	
-	
+	@Override
+	  public boolean equals(Object obj) {
+	    return EqualsBuilder.reflectionEquals(obj, this);
+	  }
 
 }
