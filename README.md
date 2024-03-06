@@ -13,3 +13,13 @@ Desafio sistema de gerenciamento de tarefas (To-Do List)
     - Prioridade
 - Criar CRUD de tarefas
 
+## ⭐️ MEU PROJETO ⭐️
+
+### 💻 Linguagem, framework e Banco de dados utilizados 💻
+
+<div align = "left">
+  <img align="center" alt="js" height="60" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" />
+  <img align="center" alt="js" height="60" width="60" src= "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg" /> 
+  <img align="center" alt="js" height="60" width="70" src= "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" />
+</div>
+
