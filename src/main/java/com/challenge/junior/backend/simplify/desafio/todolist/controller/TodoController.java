@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.challenge.junior.backend.simplify.desafio.todolist.dto.TodoDTO;
 import com.challenge.junior.backend.simplify.desafio.todolist.entity.Todo;
 import com.challenge.junior.backend.simplify.desafio.todolist.service.TodoService;
 
@@ -28,7 +29,7 @@ public class TodoController {
 	private TodoService todoService;
 
 	@PostMapping
-	public ResponseEntity<List<Todo>> create(@RequestBody @Valid Todo todo) {
+	public ResponseEntity<List<TodoDTO>> create(@RequestBody @Valid Todo todo) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(todoService.create(todo));
 	}
 	
@@ -39,7 +40,7 @@ public class TodoController {
 	*/
 	
 	@GetMapping
-	public ResponseEntity<List<Todo>> list() {
+	public ResponseEntity<List<TodoDTO>> list() {
 		return ResponseEntity.status(HttpStatus.OK).body(todoService.list());
 	}
 	
@@ -51,7 +52,7 @@ public class TodoController {
 	*/
 	
 	@PutMapping
-	public ResponseEntity<List<Todo>> update(@RequestBody Todo todo) {
+	public ResponseEntity<List<TodoDTO>> update(@RequestBody Todo todo) {
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(todoService.update(todo));
 	}
 	
@@ -62,7 +63,7 @@ public class TodoController {
 	*/
 	
 	@DeleteMapping("{id}")
-	public ResponseEntity<List<Todo>> delete(@PathVariable Long id) {
+	public ResponseEntity<List<TodoDTO>> delete(@PathVariable Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(todoService.delete(id));
 	}
 	
